@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Header } from "./Container/Header";
 import { Footer } from "./Container/Footer";
 import { Container } from "./Container";
@@ -6,6 +5,7 @@ import { Calculator } from "./Container/Calculator";
 import { Updater } from "./Container/Updater";
 import { Dater } from "./Container/Dater";
 import { useRates } from "./useRates";
+export let rateSet = null;
 
 const initialRatesTable = [
   { id: 0, curriency: "---", rate: 0.00 },
@@ -18,17 +18,13 @@ const initialRatesTable = [
 
 export default function App() {
 
-  const rateSet = useRates({ initialRatesTable });
-
-  const [switcher, setSwitcher] = useState(true);
-  const toggleSwitcher = () => setSwitcher(switcher => !switcher);
+  rateSet = useRates({ initialRatesTable });
 
   return (
     <Container>
       <Dater />
       <Header title="Kalkulator walutowy" />
-      {switcher && <Calculator rateSet={rateSet} toggleSwitcher={toggleSwitcher} />}
-      {!switcher && <Updater rateSet={rateSet} toggleSwitcher={toggleSwitcher} />}
+      {(rateSet.switcher && <Calculator />) || (!rateSet.switcher && <Updater />)}
       <Footer date="2024" />
     </Container>
   );

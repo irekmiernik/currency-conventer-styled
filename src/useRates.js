@@ -18,10 +18,16 @@ export const useRates = ({ initialRatesTable }) => {
       if (oneRate.curriency === curriency) return { ...oneRate, rate: newRate }; else return oneRate;
     }))
   };
+
+  const [switcher, setSwitcher] = useState(true);
+  const toggleSwitcher = () => setSwitcher(switcher => !switcher);
+
   return {
     ratesTable,
     getRate,
     saveRate,
+    switcher,
+    toggleSwitcher,
   };
 };
 

@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { rateSet } from "../../App";
 import Curriencies from "../../Curriencies";
 
-export const Calculator = ({ rateSet, toggleSwitcher }) => {
+export const Calculator = () => {
 
   const [inValue, setInValue] = useState("");
   const [outValue, setOutValue] = useState("");
@@ -66,7 +67,7 @@ export const Calculator = ({ rateSet, toggleSwitcher }) => {
         <p>
           <strong
             className="form__label form__labelRates"
-            onClick={toggleSwitcher}
+            onClick={rateSet.toggleSwitcher}
           >
             Aktualizacja kursów walut
           </strong>
