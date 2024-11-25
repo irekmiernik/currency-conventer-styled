@@ -1,8 +1,6 @@
-# Currency conventer
- ## Demo
- https://irekmiernik.github.io/currency-conventer-react/
- 
- ## Specification
+# Currency conventer with styled components
+  
+ ## Description
  You can calculate in this application the value of same currencies compare to polish currency: PLN
  There are five currencies (PLN, EUR, USD, GBP, CHF) and calculations can be made between each pair of this curriences (for example between EUR and GBP or GBP and EUR) so there can be made twenty differenet calculations. Beside this it is very easy to add new curriences to this conventer. To add new currency you should add new element to the const initialRatesTable in the App.js component with data on the new curriency. To update the exchange rates of any currency you should click the red label in: "Kursy walut można zobaczyć/zmienić tutaj". 
  To return to the main screen the red label in: "Powrót do kalkulacji tutaj", must be clicked but every exchange rates of the curriencies must be greater than zero and can not be empty.
