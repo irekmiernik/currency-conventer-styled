@@ -1,9 +1,9 @@
-import { Header } from "./Container/Header";
-import { Footer } from "./Container/Footer";
+import { Header } from "./Header";
+import { Footer } from "./Footer";
 import { Container } from "./Container";
-import { Calculator } from "./Container/Calculator";
-import { Updater } from "./Container/Updater";
-import { Dater } from "./Container/Dater";
+import { Calculator } from "./Calculator";
+import { Updater } from "./Updater";
+import { Dater } from "./Dater";
 import { useRates } from "./useRates";
 export let rateSet = null;
 

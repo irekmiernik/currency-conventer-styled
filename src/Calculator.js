@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { rateSet } from "../../App";
-import Curriencies from "../../Curriencies";
+import { rateSet } from "./App";
+import { Curriencies } from "./Curriencies";
+import { StyledForm, StyleP, StyleStrong, StyledButton } from "./styled";
 
 export const Calculator = () => {
 
@@ -20,8 +21,8 @@ export const Calculator = () => {
 
   return (
     <>
-      <form className="form" onSubmit={onOblicz}>
-        <p className="form__label">
+      <StyledForm onSubmit={onOblicz}>
+        <StyleP $label>
           <input
             value={inValue}
             onChange={({ target }) => setInValue(target.value)}
@@ -36,9 +37,9 @@ export const Calculator = () => {
               setInCurrency(target.value)
             }}
           >
-            <Curriencies rateSet={rateSet} />
+            <Curriencies />
           </select>
-          <strong className="form__label form__labelEqual"> = </strong>
+          <StyleStrong> = </StyleStrong>
           <input
             value={outValue}
             type="number"
@@ -52,28 +53,26 @@ export const Calculator = () => {
               setOutCurrency(target.value)
             }}
           >
-            <Curriencies rateSet={rateSet} />
+            <Curriencies />
           </select>
-        </p>
+        </StyleP>
         <p>
-          <button
-            className="form__button"
+          <StyledButton
             disabled={inCurrency === "" || outCurrency === ""
               || inCurrency === "---" || outCurrency === "---"}
           >
             Przelicz
-          </button>
+          </StyledButton>
         </p>
         <p>
-          <strong
-            className="form__label form__labelRates"
+          <StyleStrong
+            $rates
             onClick={rateSet.toggleSwitcher}
           >
             Aktualizacja kursów walut
-          </strong>
+          </StyleStrong>
         </p>
-
-      </form >
+      </StyledForm>
     </>
   )
 };

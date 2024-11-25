@@ -1,5 +1,5 @@
-import { useCurrentDate } from "../../useCurrentDate";
-import './style.css';
+import { useCurrentDate } from "./useCurrentDate";
+import { StyleP } from "./styled";
 
 export const Dater = () => {
 
@@ -21,5 +21,5 @@ export const Dater = () => {
 
   const date = useCurrentDate();
 
-  return (<p className="dater">{dateFormat.format(date) + "r. godz. " + timeFormat.format(date)}</p>);
+  return (<StyleP $dater>{dateFormat.format(date) + "r. godz. " + timeFormat.format(date)}</StyleP>);
 };

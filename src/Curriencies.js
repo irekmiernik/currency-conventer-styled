@@ -1,5 +1,6 @@
+import { rateSet } from "./App";
 
-const Curriencies = ({ rateSet }) => (
+export const Curriencies = () => (
   <>
     {rateSet.ratesTable.map(rate => (
       <option key={rate.id}>
@@ -8,5 +9,3 @@ const Curriencies = ({ rateSet }) => (
     ))}
   </>
 );
-
-export default Curriencies;

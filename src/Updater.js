@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { rateSet } from "../../App";
-import Curriencies from "../../Curriencies";
+import { rateSet } from "./App";
+import { Curriencies } from "./Curriencies";
+import { StyledForm, StyleP, StyleStrong, StyledButton } from "./styled";
 
 export const Updater = () => {
 
@@ -19,8 +20,8 @@ export const Updater = () => {
   };
 
   return (
-    <form className="form" onSubmit={onClick}>
-      <p>
+    <StyledForm onSubmit={onClick}>
+      <StyleP>
         <input
           value={rate}
           onChange={({ target }) => {
@@ -41,27 +42,26 @@ export const Updater = () => {
             setCurrency(target.value)
           }}
         >
-          <Curriencies rateSet={rateSet} />
+          <Curriencies />
         </select>
-      </p>
+      </StyleP>
       <p>
-        <button
-          className="form__button"
+        <StyledButton
           disabled={currency === "" || currency === "---" || currency === "PLN"}
         >
           {showRate
             ? "Pokaż kurs"
             : "Zapisz kurs"}
-        </button>
+        </StyledButton>
       </p>
       <p>
-        <strong
-          className="form__label form__labelRates"
+        <StyleStrong
+          $rates
           onClick={rateSet.toggleSwitcher}
         >
           Powrót do kalkulacji
-        </strong>
+        </StyleStrong>
       </p>
-    </form>
+    </StyledForm>
   )
 };
